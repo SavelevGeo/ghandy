@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "ol": "latest",
+    "ol-layerswitcher": "^3.8.3",
     "proj4": "^2.8.0"
   }
 }
