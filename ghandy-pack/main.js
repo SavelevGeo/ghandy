@@ -20,7 +20,7 @@ import LayerSwitcher from 'ol-layerswitcher';
 
 //custom projection difining, UNTM Zone 56N used for an example
 //map projection
-proj4.defs("EPSG:32656", "+proj=utm +zone=56 +datum=WGS84 +units=m +no_defs");
+proj4.defs("EPSG:32636", "+proj=utm +zone=36 +datum=WGS84 +units=m +no_defs");
 //yandex sat projection
 proj4.defs("EPSG:3395",
     "+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs");
@@ -64,9 +64,9 @@ const map = new Map({
         })
     ],
     view: new View({
-        projection: getProjection('EPSG:32656'),
-        center: [483312.3,7024735.4],
-        zoom: 10
+        projection: getProjection('EPSG:32636'),
+        center: [351680.38,6650587.24],
+        zoom: 14
   })
 });
 
