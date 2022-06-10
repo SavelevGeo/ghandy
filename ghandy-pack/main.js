@@ -54,6 +54,7 @@ const map = new Map({
         }),
         new TileLayer({
             source: new OSM(),
+	    title: 'OSM'
     })
     ],
     view: new View({
