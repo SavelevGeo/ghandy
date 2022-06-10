@@ -54,7 +54,8 @@ const map = new Map({
         }),
         new TileLayer({
             source: new OSM(),
-	    title: 'OSM'
+	    title: 'OSM',
+	    opacity: 0.8
     })
     ],
     view: new View({
