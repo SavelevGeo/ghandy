@@ -5,6 +5,7 @@ import './style.css';
 import proj4 from 'proj4';
 import {register} from 'ol/proj/proj4';
 import { get as getProjection } from 'ol/proj';
+import {createXYZ} from 'ol/tilegrid'; //for custom Yandex tilegrid
 
 //for the main map
 import {Map, View} from 'ol';
@@ -48,15 +49,19 @@ const map = new Map({
                 url:
                     'https://core-sat.maps.yandex.net/tiles?l=sat&v=3.927.0' +
                     '&x={x}&y={y}&z={z}&scale=1',
-                projection: getProjection('EPSG:3395')
+                projection: getProjection('EPSG:3395'),
+                //(c) https://gis-lab.info/forum/viewtopic.php?f=19&t=19763#p147223
+                tileGrid: createXYZ({
+                    extent: [-20037508.34, -20037508.34, 20037508.34, 20037508.34]
+                })
             }),
             title: 'Yandex Maps'
         }),
         new TileLayer({
             source: new OSM(),
-	    title: 'OSM',
-	    opacity: 0.8
-    })
+            title: 'OSM',
+            opacity: 0.8
+        })
     ],
     view: new View({
         projection: getProjection('EPSG:32656'),
