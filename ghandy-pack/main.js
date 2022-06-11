@@ -18,6 +18,9 @@ import 'ol/ol.css';
 import 'ol-layerswitcher/dist/ol-layerswitcher.css';
 import LayerSwitcher from 'ol-layerswitcher';
 
+//for locate me button
+import Control from 'ol/control/Control';
+
 //custom projection difining, UNTM Zone 56N used for an example
 //map projection
 proj4.defs("EPSG:32636", "+proj=utm +zone=36 +datum=WGS84 +units=m +no_defs");
@@ -71,8 +74,16 @@ const map = new Map({
 });
 
 //Layer switcher
-var layerSwitcher = new LayerSwitcher({
+const layerSwitcher = new LayerSwitcher({
   reverse: true,
   groupSelectStyle: 'group'
 });
 map.addControl(layerSwitcher);
+
+//Locate me button
+const locate = document.querySelector('.locate');
+map.addControl(
+  new Control({
+    element: locate
+  })
+);
