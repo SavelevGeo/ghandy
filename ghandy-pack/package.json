@@ -1,0 +1,17 @@
+{
+  "name": "ghandy-pack",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.9.9"
+  },
+  "dependencies": {
+    "ol": "latest",
+    "ol-layerswitcher": "^3.8.3",
+    "proj4": "^2.8.0"
+  }
+}
