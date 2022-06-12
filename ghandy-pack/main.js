@@ -20,6 +20,12 @@ import LayerSwitcher from 'ol-layerswitcher';
 
 //for locate me button
 import Control from 'ol/control/Control';
+import VectorLayer from 'ol/layer/Vector';
+import VectorSource from 'ol/source/Vector';
+import Feature from 'ol/Feature';
+import Point from 'ol/geom/Point';
+import {circular} from 'ol/geom/Polygon';
+import {fromLonLat} from 'ol/proj';
 
 //custom projection difining, UNTM Zone 56N used for an example
 //map projection
@@ -81,7 +87,43 @@ const layerSwitcher = new LayerSwitcher({
 map.addControl(layerSwitcher);
 
 //Locate me button
+//source layer to write location to
+const source = new VectorSource();
+const layer = new VectorLayer({
+  source: source,
+});
+map.addLayer(layer);
+//write location function
+navigator.geolocation.watchPosition(
+  function (pos) {
+    const coords = [pos.coords.longitude, pos.coords.latitude];
+    alert(fromLonLat(coords));
+    const accuracy = circular(coords, pos.coords.accuracy);
+    source.clear(true);
+    source.addFeatures([
+      new Feature(
+        accuracy.transform('EPSG:4326', map.getView().getProjection())
+      ),
+      new Feature(new Point(fromLonLat(coords))),
+    ]);
+  },
+  function (error) {
+    alert(`ERROR: ${error.message}`);
+  },
+  {
+    enableHighAccuracy: true,
+  }
+);
+//location control
 const locate = document.querySelector('.locate');
+locate.addEventListener('click', function () {
+  if (!source.isEmpty()) {
+    map.getView().fit(source.getExtent(), {
+      maxZoom: 18,
+      duration: 500,
+    });
+  }
+});
 map.addControl(
   new Control({
     element: locate
