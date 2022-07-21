@@ -8,5 +8,4 @@
   <content src="index.html"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
-  <hook src="node_modules/cordova-import-npm/scripts/importNpmPackages.js" type="before_prepare"/>
 </widget>
