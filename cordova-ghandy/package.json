@@ -2,7 +2,7 @@
   "name": "com.savelevgeo.ghandy",
   "displayName": "gHandy",
   "version": "1.1.0",
-  "description": "Mapping application for data collection and analysi",
+  "description": "Mapping application for data collection and analysis",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

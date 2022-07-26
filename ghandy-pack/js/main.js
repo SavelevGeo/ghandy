@@ -1,5 +1,5 @@
 //imports
-import './style.css';
+import '../css/style.css';
 
 //for projection defining
 import proj4 from 'proj4';
