@@ -1,6 +1,4 @@
 //imports
-alert('henlo1');
-
 import '../css/style.css';
 
 //for projection defining
@@ -9,19 +7,12 @@ import {register} from 'ol/proj/proj4';
 import { get as getProjection } from 'ol/proj';
 import {createXYZ} from 'ol/tilegrid'; //for custom Yandex tilegrid
 
-alert('henlo3');
-
-/*
 //for the main map
 import {Map, View} from 'ol';
 import TileLayer from 'ol/layer/Tile';
 import XYZ from 'ol/source/XYZ';
 import OSM from 'ol/source/OSM';
-*/
-import map from '../js/ghMapView/ghMap.js';
 
-alert('henlo4');
-/*
 //for layer switcher
 import 'ol/ol.css';
 import 'ol-layerswitcher/dist/ol-layerswitcher.css';
@@ -45,16 +36,11 @@ proj4.defs("EPSG:3395",
 register(proj4);
 const mapProjection = getProjection('EPSG:32636');
 
-alert('hooman');
-
 navigator.geolocation.getCurrentPosition(
   (pos) => {
     const coords = [pos.coords.longitude, pos.coords.latitude];
     var startPosition = fromLonLat(coords, mapProjection);
-    
-    alert(map);
 
-/*
     //map init
     const map = new Map({
       target: 'map',
@@ -159,6 +145,4 @@ navigator.geolocation.getCurrentPosition(
   {
     enableHighAccuracy: true,
   }
-i);
-
-*/
+);
