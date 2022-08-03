@@ -1,21 +1,27 @@
+alert('henlo8');
+/*
+import {Map, View} from 'ol';
+import TileLayer from 'ol/layer/Tile';
+import XYZ from 'ol/source/XYZ';
+import OSM from 'ol/source/OSM';
 
-    //map init
-    const map = new Map({
-      target: 'map',
-      layers: [
-          new TileLayer({ //ArcGIS Imagery
-              source: new XYZ({
-                  attributions:
-                      ' © <a href="https://services.arcgisonline.com/' +
-                      'ArcGIS/rest/services/World_Imagery/MapServer">' +
-                      'ArcGIS Imagery</a>',
-                  url:
-                      'https://server.arcgisonline.com/ArcGIS/rest/services/' +
-                      'World_Imagery/MapServer/tile/{z}/{y}/{x}',
-              }),
-              title: 'ArcGIS Imagery'
-          }),
-          new TileLayer({ //Yandex Maps
+//map init
+const map = new Map({
+target: 'map',
+layers: [
+  new TileLayer({ //ArcGIS Imagery
+      source: new XYZ({
+	  attributions:
+	      ' © <a href="https://services.arcgisonline.com/' +
+	      'ArcGIS/rest/services/World_Imagery/MapServer">' +
+	      'ArcGIS Imagery</a>',
+	  url:
+	      'https://server.arcgisonline.com/ArcGIS/rest/services/' +
+	      'World_Imagery/MapServer/tile/{z}/{y}/{x}',
+      }),
+      title: 'ArcGIS Imagery'
+  }),
+  new TileLayer({ //Yandex Maps
               source: new XYZ({
                   attributions:
                       ' © <a href="https://yandex.ru/legal/maps_termsofuse/">'
@@ -43,3 +49,6 @@
           zoom: 14
     })
     });
+
+export default map
+*/
