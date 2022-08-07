@@ -1,6 +1,6 @@
 import {Map, View} from 'ol';
 
-const ghMap = new Map({
+const ghndMap = new Map({
   target: 'mainMap',
   view: new View({
     center: [0, 0],
@@ -8,4 +8,4 @@ const ghMap = new Map({
   })
 });
 
-export default ghMap
+export default ghndMap
